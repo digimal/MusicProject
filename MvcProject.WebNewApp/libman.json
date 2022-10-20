@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "defaultProvider": "jsdelivr",
+  "libraries": [
+    {
+      "library": "bootstrap-icons@1.9.1",
+      "destination": "wwwroot/bootstrap-icons/"
+    },
+    {
+      "provider": "jsdelivr",
+      "library": "bootstrap3@3.3.5",
+      "destination": "wwwroot/lib/bootstrap3/"
+    }
+  ]
+}

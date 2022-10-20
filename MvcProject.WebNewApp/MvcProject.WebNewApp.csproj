@@ -1,0 +1,155 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-MvcProject.WebNewApp-301B9E1F-9FB3-49E8-89A3-81C052800F95</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\css\bootstrap-theme.css" />
+    <Content Remove="wwwroot\css\bootstrap-theme.css.map" />
+    <Content Remove="wwwroot\css\bootstrap-theme.min.css" />
+    <Content Remove="wwwroot\css\bootstrap-theme.min.css.map" />
+    <Content Remove="wwwroot\css\themes\base\accordion.css" />
+    <Content Remove="wwwroot\css\themes\base\all.css" />
+    <Content Remove="wwwroot\css\themes\base\autocomplete.css" />
+    <Content Remove="wwwroot\css\themes\base\base.css" />
+    <Content Remove="wwwroot\css\themes\base\button.css" />
+    <Content Remove="wwwroot\css\themes\base\core.css" />
+    <Content Remove="wwwroot\css\themes\base\datepicker.css" />
+    <Content Remove="wwwroot\css\themes\base\dialog.css" />
+    <Content Remove="wwwroot\css\themes\base\draggable.css" />
+    <Content Remove="wwwroot\css\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Remove="wwwroot\css\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Remove="wwwroot\css\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Remove="wwwroot\css\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Remove="wwwroot\css\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Remove="wwwroot\css\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Remove="wwwroot\css\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Remove="wwwroot\css\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Remove="wwwroot\css\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Remove="wwwroot\css\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Remove="wwwroot\css\themes\base\images\ui-icons_444444_256x240.png" />
+    <Content Remove="wwwroot\css\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Remove="wwwroot\css\themes\base\images\ui-icons_555555_256x240.png" />
+    <Content Remove="wwwroot\css\themes\base\images\ui-icons_777620_256x240.png" />
+    <Content Remove="wwwroot\css\themes\base\images\ui-icons_777777_256x240.png" />
+    <Content Remove="wwwroot\css\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Remove="wwwroot\css\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <Content Remove="wwwroot\css\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Remove="wwwroot\css\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <Content Remove="wwwroot\css\themes\base\jquery-ui.css" />
+    <Content Remove="wwwroot\css\themes\base\jquery-ui.min.css" />
+    <Content Remove="wwwroot\css\themes\base\menu.css" />
+    <Content Remove="wwwroot\css\themes\base\progressbar.css" />
+    <Content Remove="wwwroot\css\themes\base\resizable.css" />
+    <Content Remove="wwwroot\css\themes\base\selectable.css" />
+    <Content Remove="wwwroot\css\themes\base\selectmenu.css" />
+    <Content Remove="wwwroot\css\themes\base\slider.css" />
+    <Content Remove="wwwroot\css\themes\base\sortable.css" />
+    <Content Remove="wwwroot\css\themes\base\spinner.css" />
+    <Content Remove="wwwroot\css\themes\base\tabs.css" />
+    <Content Remove="wwwroot\css\themes\base\theme.css" />
+    <Content Remove="wwwroot\css\themes\base\tooltip.css" />
+    <Content Remove="wwwroot\js\artist\artist.createedit.js" />
+    <Content Remove="wwwroot\js\artist\artist.delete.js" />
+    <Content Remove="wwwroot\js\artist\artist.index.js" />
+    <Content Remove="wwwroot\js\artist\artist.like.js" />
+    <Content Remove="wwwroot\js\artist\Relation.js" />
+    <Content Remove="wwwroot\js\artist\Tags.js" />
+    <Content Remove="wwwroot\fonts\glyphicons-halflings-regular.eot" />
+    <Content Remove="wwwroot\fonts\glyphicons-halflings-regular.svg" />
+    <Content Remove="wwwroot\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Remove="wwwroot\fonts\glyphicons-halflings-regular.woff" />
+    <Content Remove="wwwroot\fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.9" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MvcProject.Bll\MvcProject.Bll.csproj" />
+    <ProjectReference Include="..\MvcProject.Dal\MvcProject.Dal.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\" />
+    <Folder Include="Views\Recording\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\bootstrap-theme.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\css\bootstrap-theme.css.map" />
+    <None Include="wwwroot\css\bootstrap-theme.min.css" />
+    <None Include="wwwroot\css\bootstrap-theme.min.css.map" />
+    <None Include="wwwroot\css\themes\base\accordion.css" />
+    <None Include="wwwroot\css\themes\base\all.css" />
+    <None Include="wwwroot\css\themes\base\autocomplete.css" />
+    <None Include="wwwroot\css\themes\base\base.css" />
+    <None Include="wwwroot\css\themes\base\button.css" />
+    <None Include="wwwroot\css\themes\base\core.css" />
+    <None Include="wwwroot\css\themes\base\datepicker.css" />
+    <None Include="wwwroot\css\themes\base\dialog.css" />
+    <None Include="wwwroot\css\themes\base\draggable.css" />
+    <None Include="wwwroot\css\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-icons_222222_256x240.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-icons_444444_256x240.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-icons_454545_256x240.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-icons_555555_256x240.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-icons_777620_256x240.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-icons_777777_256x240.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-icons_888888_256x240.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <None Include="wwwroot\css\themes\base\jquery-ui.css" />
+    <None Include="wwwroot\css\themes\base\jquery-ui.min.css" />
+    <None Include="wwwroot\css\themes\base\menu.css" />
+    <None Include="wwwroot\css\themes\base\progressbar.css" />
+    <None Include="wwwroot\css\themes\base\resizable.css" />
+    <None Include="wwwroot\css\themes\base\selectable.css" />
+    <None Include="wwwroot\css\themes\base\selectmenu.css" />
+    <None Include="wwwroot\css\themes\base\slider.css" />
+    <None Include="wwwroot\css\themes\base\sortable.css" />
+    <None Include="wwwroot\css\themes\base\spinner.css" />
+    <None Include="wwwroot\css\themes\base\tabs.css" />
+    <None Include="wwwroot\css\themes\base\theme.css" />
+    <None Include="wwwroot\css\themes\base\tooltip.css" />
+    <None Include="wwwroot\js\artist\artist.createedit.js" />
+    <None Include="wwwroot\js\artist\artist.delete.js" />
+    <None Include="wwwroot\js\artist\artist.index.js" />
+    <None Include="wwwroot\js\artist\artist.like.js" />
+    <None Include="wwwroot\js\artist\Relation.js" />
+    <None Include="wwwroot\js\artist\Tags.js" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\css\site.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

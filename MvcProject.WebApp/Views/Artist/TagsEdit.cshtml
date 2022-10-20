@@ -1,0 +1,13 @@
+﻿@model IEnumerable<MvcProject.Bll.ViewModels.Artist.TagViewModel>
+
+<script>
+    $(document).ready(InitView('@Html.Raw(Json.Encode(Model))'));
+</script>
+<div id="tags_edit_view">
+    <form id="tagsEditForm">
+
+        <input id="tagsInput" type="text" data-role="tagsinput" />
+
+        <button type="button" onclick="SubmitTags('@ViewBag.ArtistId')" >Save</button>
+    </form>
+</div>

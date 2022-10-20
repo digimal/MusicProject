@@ -1,0 +1,10 @@
+﻿@model IEnumerable<MvcProject.Bll.ViewModels.Common.BaseViewModel>
+
+<div id="grid-artists" class="grid" data-masonry='{
+     "itemSelector": ".grid-item" }'>
+    @foreach (var item in Model)
+    {
+        @Html.Partial("BaseArtist", item)
+    }
+
+</div>

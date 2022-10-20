@@ -1,0 +1,14 @@
+﻿@model MvcProject.Bll.ViewModels.Common.LikesViewModel
+
+<div id="artist-@ViewBag.ArtistId-likes">
+    @if (User.Identity.IsAuthenticated)
+    {
+        string color = Model.IsLiked ? "red" : "gray";
+        <span class="glyphicon glyphicon-heart active" style="color: @color" data-artist-id="@ViewBag.ArtistId"></span>
+    }
+    else
+    {
+        <span class="glyphicon glyphicon-heart" data-toggle="tooltip" data-placement="right" title="Please, register or log in."></span>
+    }
+    <span>@Model.LikesCount</span>
+</div>

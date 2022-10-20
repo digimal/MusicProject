@@ -1,0 +1,11 @@
+﻿@model IEnumerable<MvcProject.Bll.ViewModels.Artist.ArtistBaseViewModel>
+
+<table class="table">
+@foreach (var item in Model) {
+    <tr>
+        <td>@Html.ActionLink(item.Name, "Details", "Artist", new { id = item.Id }, new { })</td>
+        <td>@Html.Action("Likes", "Artist", new { id = item.Id })</td>
+    </tr>
+}
+
+</table>

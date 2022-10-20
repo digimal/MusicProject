@@ -1,0 +1,121 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <OutputPath>bin\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Update="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Ancestor\" />
+    <Folder Include="Views\BaseUserManagement\" />
+    <Folder Include="Views\Tag\" />
+    <Folder Include="wwwroot\lib\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\css\bootstrap-theme.css" />
+    <None Include="wwwroot\css\bootstrap-theme.css.map" />
+    <None Include="wwwroot\css\bootstrap-theme.min.css" />
+    <None Include="wwwroot\css\bootstrap-theme.min.css.map" />
+    <None Include="wwwroot\css\Custom\TagEdit.css" />
+    <None Include="wwwroot\css\Site.css" />
+    <None Include="wwwroot\css\themes\base\accordion.css" />
+    <None Include="wwwroot\css\themes\base\all.css" />
+    <None Include="wwwroot\css\themes\base\autocomplete.css" />
+    <None Include="wwwroot\css\themes\base\base.css" />
+    <None Include="wwwroot\css\themes\base\button.css" />
+    <None Include="wwwroot\css\themes\base\core.css" />
+    <None Include="wwwroot\css\themes\base\datepicker.css" />
+    <None Include="wwwroot\css\themes\base\dialog.css" />
+    <None Include="wwwroot\css\themes\base\draggable.css" />
+    <None Include="wwwroot\css\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-icons_222222_256x240.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-icons_444444_256x240.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-icons_454545_256x240.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-icons_555555_256x240.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-icons_777620_256x240.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-icons_777777_256x240.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-icons_888888_256x240.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-icons_cc0000_256x240.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <None Include="wwwroot\css\themes\base\images\ui-icons_ffffff_256x240.png" />
+    <None Include="wwwroot\css\themes\base\jquery-ui.css" />
+    <None Include="wwwroot\css\themes\base\jquery-ui.min.css" />
+    <None Include="wwwroot\css\themes\base\menu.css" />
+    <None Include="wwwroot\css\themes\base\progressbar.css" />
+    <None Include="wwwroot\css\themes\base\resizable.css" />
+    <None Include="wwwroot\css\themes\base\selectable.css" />
+    <None Include="wwwroot\css\themes\base\selectmenu.css" />
+    <None Include="wwwroot\css\themes\base\slider.css" />
+    <None Include="wwwroot\css\themes\base\sortable.css" />
+    <None Include="wwwroot\css\themes\base\spinner.css" />
+    <None Include="wwwroot\css\themes\base\tabs.css" />
+    <None Include="wwwroot\css\themes\base\theme.css" />
+    <None Include="wwwroot\css\themes\base\tooltip.css" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="wwwroot\js\Custom\artist.createedit.js" />
+    <None Include="wwwroot\js\Custom\artist.delete.js" />
+    <None Include="wwwroot\js\Custom\artist.index.js" />
+    <None Include="wwwroot\js\Custom\artist.like.js" />
+    <None Include="wwwroot\js\Custom\Relation.js" />
+    <None Include="wwwroot\js\Custom\Tags.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MvcProject.Bll\MvcProject.Bll.csproj" />
+    <ProjectReference Include="..\MvcProject.DI\MvcProject.DI.csproj" />
+    <ProjectReference Include="..\MvcProject.Domain\MvcProject.Domain.csproj" />
+    <ProjectReference Include="..\MvcProject.Shared\MvcProject.Shared.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.8.1" />
+    <PackageReference Include="AutoMapper" Version="7.0.1" />
+    <PackageReference Include="ImageProcessor" Version="2.6.1.19" />
+    <PackageReference Include="ImageProcessor.Web" Version="4.9.2.19" />
+    <PackageReference Include="ImageProcessor.Web.Config" Version="2.4.1.19" />
+    <PackageReference Include="jQuery" Version="3.3.1" />
+    <PackageReference Include="jQuery.UI.Combined" Version="1.12.1" />
+    <PackageReference Include="jQuery.Validation" Version="1.17.0" />
+    <PackageReference Include="Microsoft.ApplicationInsights.Web" Version="2.5.1" />
+    <PackageReference Include="Microsoft.jQuery.Unobtrusive.Ajax" Version="3.2.5" />
+    <PackageReference Include="Microsoft.jQuery.Unobtrusive.Validation" Version="3.2.4" />
+    <PackageReference Include="Microsoft.Owin.Security.Google" Version="4.0.0" />
+    <PackageReference Include="Modernizr" Version="2.8.3" />
+    <PackageReference Include="Serilog" Version="2.7.1" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="4.4.1" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
+    <PackageReference Include="Microsoft.DotNet.UpgradeAssistant.Extensions.Default.Analyzers" Version="0.4.346202">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Antlr4" Version="4.6.6" />
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.9" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,11 @@
+﻿@model MvcProject.WebApp.Models.Error.ErrorUrlViewModel
+
+@{
+    ViewBag.Title = "Unauthorized";
+}
+
+<h2>401 - Unauthorized</h2>
+@if (Model.ReferrerUrl != null)
+{
+    <p>@Model.ReferrerUrl</p> 
+}

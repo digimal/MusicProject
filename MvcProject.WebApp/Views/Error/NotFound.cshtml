@@ -1,0 +1,18 @@
+﻿@model MvcProject.WebApp.Models.Error.ErrorUrlViewModel
+
+@{
+    ViewBag.Title = "NotFound";
+}
+
+<h2>404 :-(</h2>
+
+@if (!string.IsNullOrEmpty(Model.RequestedUrl))
+{
+    <p>You tried to access: @Model.RequestedUrl</p>
+}
+@if (!string.IsNullOrEmpty(Model.ReferrerUrl))
+{
+    <a href="@Model.ReferrerUrl">Go back</a>
+}
+
+

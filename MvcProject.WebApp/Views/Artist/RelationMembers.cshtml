@@ -1,0 +1,21 @@
+﻿@model IEnumerable<MvcProject.Bll.ViewModels.Artist.MemberViewModel>
+
+<div id="relation_members">
+    <table class="table" id="relationTable">
+        <thead>
+            <tr>
+                <th scope="col"> Name </th>
+                <th scope="col"> Start </th>
+                <th scope="col"> End </th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var member in Model)
+            {
+                @Html.Partial("RelationMember", member)
+            }
+        </tbody>
+    </table>
+</div>

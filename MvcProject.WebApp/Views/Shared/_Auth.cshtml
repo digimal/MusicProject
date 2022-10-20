@@ -1,0 +1,23 @@
+﻿@using Microsoft.AspNetCore.Identity
+@if (User.Identity.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOut", "User", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                @Html.ActionLink("Welcome, " + User.Identity.Name + "!", "Index", "Profile")
+            </li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log out</a></li>
+        </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Register", "Register", "User", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Login", "Login", "User", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}
+

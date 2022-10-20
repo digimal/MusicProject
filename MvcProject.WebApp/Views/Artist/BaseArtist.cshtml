@@ -1,0 +1,21 @@
+﻿@model MvcProject.Bll.ViewModels.Artist.ArtistBaseViewModel
+
+@{
+    string id = "artist" + Model.Id;
+}
+
+<div class="grid-item" id="@id" style="width:160px; height:310px">
+    <div>
+        @Html.Partial("BaseArtistElement", Model)
+        <div style="text-align:center">
+            @Html.Action("Likes", new { id = Model.Id })
+        </div>
+        @if (User.IsInRole("Moderator"))
+        {
+            <div style="text-align:center">
+                <button type="button" class="btn btn-primary edit-artist" data-toggle="modal" data-target="#modalArtist" data-artist-id="@Model.Id">Edit</button>
+                <button type="button" class="btn btn-primary delete-artist" data-toggle="modal" data-target="#modalArtistDelete" data-artist-id="@Model.Id">Delete</button>
+            </div>
+        }
+    </div>
+</div>

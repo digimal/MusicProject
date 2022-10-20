@@ -1,0 +1,12 @@
+﻿@model MvcProject.Bll.ViewModels.User.ProfileViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+@Scripts.Render("~/Scripts/Custom/artist.like.js")
+
+<h2>Hello, @Model.UserName!</h2>
+
+<h4>Your Preferences</h4>
+
+@Html.Action("FavouriteArtists")

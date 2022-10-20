@@ -1,0 +1,24 @@
+﻿@model IEnumerable<MvcProject.Bll.ViewModels.Artist.ArtistBaseViewModel>
+@{
+    ViewBag.Title = "Artists";
+}
+@Scripts.Render("~/bundles/masonry")
+@Scripts.Render("~/bundles/artists")
+@Scripts.Render("~/bundles/jqueryui")
+@Styles.Render("~/Content/ui")
+
+<div class="container">
+    <h2 style="float:left">Artists</h2>
+    @if (User.IsInRole("Moderator"))
+    {
+        <button type="button" class="btn btn-primary" style="margin-left:15px; margin-top:15px" data-toggle="modal" data-target="#modalArtist" id="createArtist">Create new</button>
+    }
+</div>
+@Html.Partial("Artists", Model)
+<div class="modal fade" id="modalArtist" tabindex="-1" role="dialog" aria-labelledby="modalArtistLabel" aria-hidden="true">
+</div>
+<div class="modal fade" id="modalArtistDelete" tabindex="-1" role="dialog" aria-labelledby="modalArtistLabel" aria-hidden="true">
+    @Html.Partial("Delete")
+</div>
+
+

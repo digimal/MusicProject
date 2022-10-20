@@ -1,0 +1,51 @@
+﻿@model MvcProject.Bll.ViewModels.Artist.MemberViewModel
+@{
+    string modelId = Model.Id.ToString();
+    string memberRowId = "memberRow" + modelId;
+    string editMemberId = "editMember" + modelId;
+    string deleteMemberId = "deleteMember" + modelId;
+    string intervalStartId = "start" + modelId;
+    string intervalEndId = "end" + modelId;
+    bool isModerator = User.IsInRole("Moderator");
+}
+<tr id="@memberRowId">
+    <script>
+    $(document).ready(function () {
+        container["@modelId"] = {
+        ArtistId: @Model.ArtistId,
+        RelationId: @Model.RelationId,
+            Interval: {
+                StartDate: "",
+                EndDate: "",
+            },
+        Name: "@Model.Name",
+        Id: @Model.Id,
+    };
+        if ("@Model.Interval.StartDate" !== "")
+        {
+            container["@modelId"]["Interval"]["StartDate"] = CSharpDateToJSDate('@Model.Interval.StartDate.ToString()');
+        }
+        if ("@Model.Interval.EndDate" !== "")
+        {
+            container["@modelId"]["Interval"]["EndDate"] = CSharpDateToJSDate('@Model.Interval.EndDate.ToString()');
+        }
+        $('#@intervalStartId').datepicker();
+        $('#@intervalEndId').datepicker();
+        Refresh('@modelId');
+        $('#@intervalStartId').datepicker('disable');
+        $('#@intervalEndId').datepicker('disable' );
+    });
+    </script>
+    <td> @Html.ActionLink(Model.Name, "Details", "Artist", new { id = Model.Id }, new { })</td>
+    <td> <input type="text" id="@intervalStartId" class="datepicker" /> </td>
+    <td> <input type="text" id="@intervalEndId" class="datepicker" /> </td>
+    <td> @if (isModerator)
+    { 
+        <button type="button" id="@editMemberId" class="btn btn-primary" onclick="onEdit('@modelId')">Edit</button> 
+    }</td>
+    <td> @if (isModerator)
+    {
+        <button type="button" id="@deleteMemberId" class="btn btn-primary" onclick="onDelete('@modelId')">Delete</button>
+    }</td>
+</tr>
+

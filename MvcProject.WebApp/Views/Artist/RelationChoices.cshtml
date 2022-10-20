@@ -1,0 +1,36 @@
+﻿@model SelectList
+
+<script>
+    $(document).ready(function () {
+        relationId = $('#relList').val();
+    });
+    function onRelationChanged() {
+        relationId = $('#relList').val();
+        $.ajax({
+            url: '/Artist/RelationMembers',
+            type: 'POST',
+            data: {
+                artistId: artistId + "",
+                relationId: $('#relList').val()
+            },
+            success: function (result) {
+                $("#relation_members").replaceWith($(result));
+            },
+            error: function () {
+                alert("Error during getting related artists!");
+            }
+        });
+    };
+</script>
+
+@if (Model.Any())
+{
+    <div style="margin-top: 10px">
+        @Html.DropDownList("RelationChoices", Model, new { id = "relList", @class = "form-control", style = "float:left; margin-right:10px;", onchange = "onRelationChanged()" })
+        @if (User.IsInRole("Moderator"))
+        {
+            <button type="button" class="btn" onclick="onAdd()">Add member</button>
+        }
+    </div>
+}
+

@@ -1,0 +1,17 @@
+﻿@model MvcProject.WebApp.Models.Error.ErrorViewModel
+@{
+    ViewBag.Title = "Default";
+}
+@if (Model.StatusCode.HasValue)
+{
+    <h2>@Model.StatusCode.Value</h2>
+}
+
+<h3>@Model.Message</h3>
+
+@if (Model.ErrorUrl != null)
+{
+    @Model.ErrorUrl.RequestedUrl
+    @Model.ErrorUrl.ReferrerUrl
+}
+

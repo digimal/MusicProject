@@ -1,0 +1,27 @@
+﻿@model IEnumerable<MvcProject.Bll.ViewModels.Artist.TagViewModel>
+@{
+    AjaxOptions options = new AjaxOptions()
+    {
+        InsertionMode = InsertionMode.ReplaceWith,
+        UpdateTargetId = "tags_view",
+        HttpMethod = "Post",
+        OnFailure = "alert(error)"
+    };
+}
+
+<div id="tags_view">
+
+    @foreach (var item in Model)
+    {
+        <span class="tag label label-info" style="margin-left:2px">
+            @Html.DisplayFor(modelItem => item.Name)
+        </span>
+    }
+    @if (User.IsInRole("Moderator"))
+    {
+        @Ajax.ActionLink("Edit", "TagsEdit", "Artist", new { id = ViewBag.ArtistId }, options, new { @class = "tag label label-info", style = "background-color: red" })
+    }
+
+</div>
+
+
