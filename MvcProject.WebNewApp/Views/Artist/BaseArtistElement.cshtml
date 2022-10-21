@@ -6,6 +6,7 @@
 }
 
 <div id="@containerId" style="width:150px; margin:auto; margin-top:5px; height: 200px;" onclick="window.location.href='@Url.Action("Details", new { id = Model.Id })'">
+    <vc:picture picture-id="@Model.PictureId" />
     <p class="text-center" id="@name">
         @Model.Name
     </p>

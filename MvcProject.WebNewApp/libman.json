@@ -11,5 +11,11 @@
       "library": "bootstrap3@3.3.5",
       "destination": "wwwroot/lib/bootstrap3/"
     }
-  ]
+  ,
+{
+  "provider": "cdnjs",
+  "library": "masonry@4.2.2",
+  "destination": "wwwroot/lib/masonry/"
+}
+]
 }

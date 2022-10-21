@@ -70,6 +70,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.9" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.9" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="6.0.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.9" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.10" />
@@ -144,6 +145,24 @@
     <None Include="wwwroot\fonts\glyphicons-halflings-regular.ttf" />
     <None Include="wwwroot\fonts\glyphicons-halflings-regular.woff" />
     <None Include="wwwroot\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="wwwroot\Pictures\220px-Indestructible.jpg" />
+    <None Include="wwwroot\Pictures\928397d8a441e0903da1dbdbd00bdde3.jpg" />
+    <None Include="wwwroot\Pictures\Default\default-1.jpg" />
+    <None Include="wwwroot\Pictures\NotTracked\2018-19-9--17-28-10_d9de170e-dac3-4a41-b154-cfad10a80e2c_artists.jpg" />
+    <None Include="wwwroot\Pictures\NotTracked\2018-19-9--17-30-47_44a32f69-be84-44ef-9a36-d7320851b4c5_artists.jpg" />
+    <None Include="wwwroot\Pictures\NotTracked\2018-19-9--17-31-01_f0ed421d-a833-4d35-8f6d-5a0ac9190cd7_artists.jpg" />
+    <None Include="wwwroot\Pictures\NotTracked\2018-19-9--18-16-55_87a51897-afe1-49d4-8ecc-dbcaaecfc589_artists.jpg" />
+    <None Include="wwwroot\Pictures\NotTracked\2018-19-9--18-17-25_4462425e-07d4-4db9-85f9-84ac06ef4f5c_artists.jpg" />
+    <None Include="wwwroot\Pictures\NotTracked\2018-19-9--18-42-29_f579baaa-a2b1-48ea-a850-37001ec49de7_artists.jpg" />
+    <None Include="wwwroot\Pictures\NotTracked\2018-19-9--18-47-11_752e1a5a-5b53-47ba-b6dc-ce894397088a_artists.jpg" />
+    <None Include="wwwroot\Pictures\NotTracked\2018-21-9--12-25-03_27dc5ab8-49e1-4844-8fcf-1ec92c6f6d5b_artists.jpg" />
+    <None Include="wwwroot\Pictures\NotTracked\2018-21-9--12-28-21_d275ae57-328a-4111-b71e-80da58141c2f_artists.jpg" />
+    <None Include="wwwroot\Pictures\NotTracked\2018-21-9--12-31-47_ed2284fe-374f-430f-aef7-987a408643cc_artists.jpg" />
+    <None Include="wwwroot\Pictures\NotTracked\2018-21-9--12-33-28_ed63d584-bd27-4a2d-b605-090a97859606_artists.jpg" />
+    <None Include="wwwroot\Pictures\NotTracked\2018-21-9--12-44-04_66c11ed7-0f17-451b-9940-ede61edafe45_artists.jpg" />
+    <None Include="wwwroot\Pictures\NotTracked\2018-21-9--12-59-30_aa5fc090-740a-45c7-8cd2-09c842820306_artists.jpg" />
+    <None Include="wwwroot\Pictures\NotTracked\2018-21-9--13-04-18_c89d4ad0-c5d0-4213-8d88-448f2105943c_artists.jpg" />
+    <None Include="wwwroot\Pictures\NotTracked\2018-26-9--18-12-48_0e0c853c-c824-4b85-90ab-2fd908ae06d4_artists.jpg" />
   </ItemGroup>
 
   <ItemGroup>

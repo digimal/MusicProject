@@ -30,8 +30,8 @@ builder.Services.AddScoped<IArtistLikeService, ArtistLikeService>();
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddMvc(setupAction => { });
-builder.Services.AddControllersWithViews();
-builder.Services.AddRazorPages();
+builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 
 builder.Services.AddHttpContextAccessor();
 
