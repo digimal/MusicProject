@@ -7,12 +7,9 @@
 
 <div class="grid-item" id="@id" style="width:160px; height:310px">
     <div>
-        @await Html.PartialAsync("BaseArtistElement", Model)
+        <partial name="BaseArtistElement" model="Model" />
         <div style="text-align:center">
-            @{
-               //await Component.InvokeAsync("Likes", artistId);
-            }
-            <vc:likes artist-id="@artistId"></vc:likes>
+            <vc:likes artist-id="@artistId" />
         </div>
         @if (User.IsInRole("Moderator"))
         {
