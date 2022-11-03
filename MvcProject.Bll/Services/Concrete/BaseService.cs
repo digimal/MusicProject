@@ -73,6 +73,11 @@ namespace MvcProject.Bll.Services.Concrete
             return dbSet.FirstOrDefault(predicate);
         }
 
+        protected virtual T GetOneIf(Expression<Func<T, bool>> predicate, Func<IQueryable<T>, IQueryable<T>> options)
+        {
+            return options(dbSet).FirstOrDefault(predicate);
+        }
+
         protected virtual Task<T> GetOneIfAsync(Expression<Func<T, bool>> predicate)
         {
             return dbSet.FirstOrDefaultAsync(predicate);

@@ -1,0 +1,61 @@
+﻿@model MvcProject.Bll.ViewModels.Artist.ArtistShowViewModel
+@{
+    ViewBag.Title = "Details";
+    string path = string.IsNullOrEmpty(Model.PicturePath) ? "/Pictures/Default/default-1.jpg" : Model.PicturePath;
+}
+
+<script>
+    $(document).ready(function () {
+        artistId = @Model.Id;
+    });
+</script>
+<div style="overflow: hidden; margin-top: 10px">
+    <img src="@path" width="150" height="150" style="float:left; margin:10px" />
+    <h2>
+        @Html.DisplayFor(model => model.Name)
+    </h2>
+    <h3>
+        @if (!string.IsNullOrEmpty(Model.Aliases))
+        {
+            @:(
+            @Model.Aliases
+            @:)
+        }
+    </h3>
+    <!-- ToDo: tags <vc:tags artist-id=""></vc:tags>-->
+    <h4>
+        @if (Model.Interval.StartDate.HasValue)
+        {
+            @Html.Label(Model.Interval.StartDate.Value.Year.ToString())
+            ;
+            @:-
+            if (Model.Interval.EndDate.HasValue)
+            {
+                @Html.Label(Model.Interval.EndDate.Value.Year.ToString())
+            }
+            else
+            {
+                @Html.Label("present")
+            }
+        }
+        else
+        {
+            if (Model.Interval.EndDate.HasValue)
+            {
+                @Html.Label("unknown")
+                ;
+                @:-
+                @Html.Label(Model.Interval.EndDate.Value.Year.ToString())
+            }
+        }
+    </h4>
+</div>
+<div>
+    <h5>
+        @Html.DisplayTextFor(model => model.Description)
+    </h5>
+</div>
+
+
+
+

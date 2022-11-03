@@ -9,10 +9,10 @@ namespace MvcProject.Bll.ViewModels.Artist
 {
     public class ArtistViewModel : ArtistBaseViewModel
     {
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Name field is obligatory.")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Aliaces field is obligatory.")]
         public string Aliases { get; set; }
 
-        [Required(AllowEmptyStrings = false, ErrorMessage = "Name field is obligatory.")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Description field is obligatory.")]
         public string Description { get; set; }
 
         public Common.TimeIntervalViewModel Interval { get; set; }

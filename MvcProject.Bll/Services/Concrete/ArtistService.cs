@@ -6,6 +6,7 @@ using MvcProject.Bll.ViewModels.Artist;
 using MvcProject.Bll.ViewModels.Common;
 using AutoMapper;
 using MvcProject.Dal;
+using Microsoft.EntityFrameworkCore;
 
 namespace MvcProject.Bll.Services.Concrete
 {
@@ -35,12 +36,14 @@ namespace MvcProject.Bll.Services.Concrete
 
         public ArtistShowViewModel GetArtist(int artistId)
         {
-            return mapper.Map<Artist, ArtistShowViewModel>(GetOneIf(x => x.Id == artistId));
+            var model = mapper.Map<Artist, ArtistShowViewModel>(GetArtistDomain(artistId));
+
+            return model;
         }
 
         private Artist GetArtistDomain(int artistId)
         {
-            return GetOneIf(x => x.Id == artistId);
+            return dbSet.Include(x => x.Picture).FirstOrDefault(x => x.Id == artistId);
         }
 
         public IEnumerable<ArtistBaseViewModel> GetArtists(int skip, int take)

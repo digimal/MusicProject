@@ -1,0 +1,24 @@
+﻿@model IEnumerable<MvcProject.Bll.ViewModels.Artist.TagViewModel>
+
+<form asp-action="TagsEdit" asp-controller="Artist"
+      data-ajax="true"
+      data-ajax-method="POST"
+      data-ajax-mode="replace"
+      data-ajax-update="#tags_view" >
+    <div id="tags_view">
+
+        @foreach (var item in Model)
+        {
+            <span class="tag label label-info" style="margin-left:2px">
+                @Html.DisplayFor(modelItem => item.Name)
+            </span>
+        }
+        @if (User.IsInRole("Moderator"))
+        {
+            <button id="tags_edit" class="tag label label-info" style="background-color: red" data-artist-id="@ViewBag.Artisrt">Edit</button>
+        }
+
+    </div>
+</form>
+
+

@@ -94,6 +94,14 @@ namespace MvcProject.Dal
 
                     await SaveChanges(musicContext, "ArtistRelations");
                 }
+
+                if (!await musicContext.Roles.AnyAsync())
+                {
+                    await musicContext.Roles.AddRangeAsync(
+                        GetRoles());
+
+                    await SaveChanges(musicContext, "Roles");
+                }
             }
             catch (Exception ex)
             {
@@ -165,6 +173,14 @@ namespace MvcProject.Dal
             new ArtistRelation() { SourceId = 7, TargetId = 5, TypeId = 1, Interval = new TimeInterval() { } },
             new ArtistRelation() { SourceId = 7, TargetId = 6, TypeId = 1, Interval = new TimeInterval() { } },
             new ArtistRelation() { SourceId = 7, TargetId = 6, TypeId = 2, Interval = new TimeInterval() { } }
+        };
+
+        [Order]
+        static IEnumerable<Role> GetRoles() => new List<Role>
+        {
+            new Role() { Name="Administrator", NormalizedName="ADMINISTRATOR" },
+            new Role() { Name="Moderator", NormalizedName="MODERATOR" },
+            new Role() { Name="User", NormalizedName="USER" },
         };
     }
 }

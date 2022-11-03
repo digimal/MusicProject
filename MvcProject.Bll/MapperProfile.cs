@@ -15,7 +15,11 @@ namespace MvcProject.Bll
             // Artist
             CreateMap<ArtistBaseViewModel, Artist>().ReverseMap();
             CreateMap<ArtistViewModel, Artist>().ReverseMap();
-            CreateMap<Artist, ArtistShowViewModel>().ForMember(x => x.PicturePath, opt => opt.MapFrom(y => y.Picture.Path));
+
+            CreateMap<Artist, ArtistShowViewModel>()
+                .BeforeMap((src, dest) => src.Interval = src.Interval ?? new TimeInterval())
+                .ForMember(x => x.PicturePath, opt => opt.MapFrom(y => y.Picture.Path));
+
             CreateMap<TagViewModel, ArtistTag>().ReverseMap();
             CreateMap<ArtistViewModel, ArtistCreateViewModel>();
             // Authorship

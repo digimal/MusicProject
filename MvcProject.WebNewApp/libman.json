@@ -17,5 +17,17 @@
   "library": "masonry@4.2.2",
   "destination": "wwwroot/lib/masonry/"
 }
+,
+{
+  "provider": "jsdelivr",
+  "library": "jquery-ui@1.13.2",
+  "destination": "wwwroot/lib/jquery-ui/"
+}
+,
+{
+  "provider": "cdnjs",
+  "library": "jqueryui@1.13.2",
+  "destination": "wwwroot/lib/jqueryui/"
+}
 ]
 }

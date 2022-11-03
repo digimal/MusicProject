@@ -12,8 +12,6 @@ namespace MvcProject.WebNewApp.Controllers
 {
     public class ArtistController : BaseController
     {
-        private IDictionary<string, string> dict = new Dictionary<string, string>();
-
         private readonly IArtistService _service;
         private readonly IPictureService _pictureService;
         private readonly IArtistRelationService _relationService;
@@ -44,7 +42,7 @@ namespace MvcProject.WebNewApp.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View("Artist", _service.GetArtists());
+            return View(_service.GetArtists());
         }
 
         public ActionResult Artists()
@@ -53,8 +51,8 @@ namespace MvcProject.WebNewApp.Controllers
         }
 
         [HttpPost]
-        [Route("Artist/{s}")]
-        public ActionResult Artist([FromBody] ArtistBaseViewModel viewModel, [FromRoute] string s, [FromQuery] string a)
+        [Route("Artist")]
+        public ActionResult Artist([FromBody] ArtistBaseViewModel viewModel)
         {
             ViewBag.Update = true;
             return PartialView("BaseArtist", viewModel);
@@ -148,19 +146,6 @@ namespace MvcProject.WebNewApp.Controllers
             MemberViewModel parsedModel = Newtonsoft.Json.JsonConvert.DeserializeObject(model, typeof(MemberViewModel)) as MemberViewModel;
             _relationService.Delete(parsedModel, RelationMap[parsedModel.RelationId]);
             return Ok();
-        }
-
-        public ActionResult Picture(int? id)
-        {
-            // Warning: Currently, pic with id=1 is default
-            return PartialView(_pictureService.Get(id ?? 1));
-        }
-
-        [HttpGet]
-        public IActionResult Likes(int artistId)
-        {
-            ViewBag.ArtistId = artistId;
-            return PartialView("Likes", _likeService.GetLikes(artistId, GetUserId()));
         }
 
         [HttpPost]

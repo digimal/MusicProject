@@ -15,9 +15,12 @@ builder.Services.AddDbContext<MusicContext>(options =>
     options.UseSqlServer(connectionString));
 
 builder.Services.AddDefaultIdentity<User>()
+           .AddRoles<Role>()
            .AddDefaultUI()
            .AddEntityFrameworkStores<MusicContext>()
                            .AddDefaultTokenProviders();
+
+builder.Services.AddScoped<IUserClaimsPrincipalFactory<User>, UserClaimsPrincipalFactory<User, Role>>();
 
 builder.Services.AddScoped<IArtistService, ArtistService>();
 builder.Services.AddScoped<IPictureService, PictureService>();
@@ -34,6 +37,8 @@ builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 
 builder.Services.AddHttpContextAccessor();
+
+builder.Services.ConfigureApplicationCookie(conf => { });
 
 var app = builder.Build();
 
