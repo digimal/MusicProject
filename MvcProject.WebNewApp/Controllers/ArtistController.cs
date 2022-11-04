@@ -6,12 +6,15 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using MvcProject.Bll.Services.Abstract;
 using MvcProject.Bll.ViewModels.Artist;
+using MvcProject.Bll.ViewModels.Common;
 using MvcProject.Domain;
+using MvcProject.WebNewApp.Helpers;
 
 namespace MvcProject.WebNewApp.Controllers
 {
     public class ArtistController : BaseController
     {
+        private readonly IWebHostEnvironment webHostEnvironment;
         private readonly IArtistService _service;
         private readonly IPictureService _pictureService;
         private readonly IArtistRelationService _relationService;
@@ -27,7 +30,8 @@ namespace MvcProject.WebNewApp.Controllers
             IArtistRelationTypeService relationTypeService,
             IArtistLikeService likeService,
             UserManager<User> userManager,
-            IMapper mapper)
+            IMapper mapper,
+            IWebHostEnvironment webHostEnvironment)
             : base(userManager)
         {
             _service = service;
@@ -36,7 +40,7 @@ namespace MvcProject.WebNewApp.Controllers
             _relationTypeService = relationTypeService;
             _likeService = likeService;
             _mapper = mapper;
-
+            this.webHostEnvironment = webHostEnvironment;
         }
 
         [HttpGet]
@@ -214,6 +218,16 @@ namespace MvcProject.WebNewApp.Controllers
 
         private ArtistViewModel WithPictureSaving(ArtistCreateViewModel viewModel)
         {
+            if (viewModel.Avatar != null)
+            {
+                var pictureModel = new PictureViewModel
+                {
+                    Path = viewModel.Avatar.SavePicture(webHostEnvironment.WebRootPath)
+                };
+
+                viewModel.PictureId = _pictureService.Create(pictureModel).Id;
+            }
+
             return viewModel;
         }
 
