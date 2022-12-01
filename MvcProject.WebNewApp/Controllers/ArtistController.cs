@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Extensions.Localization;
 using MvcProject.Bll.Services.Abstract;
 using MvcProject.Bll.ViewModels.Artist;
 using MvcProject.Bll.ViewModels.Common;
@@ -21,6 +22,7 @@ namespace MvcProject.WebNewApp.Controllers
         private readonly IArtistRelationTypeService _relationTypeService;
         private readonly IArtistLikeService _likeService;
         private readonly IMapper _mapper;
+        private readonly IStringLocalizer<ArtistController> localizer;
 
 
         public ArtistController(
@@ -31,7 +33,8 @@ namespace MvcProject.WebNewApp.Controllers
             IArtistLikeService likeService,
             UserManager<User> userManager,
             IMapper mapper,
-            IWebHostEnvironment webHostEnvironment)
+            IWebHostEnvironment webHostEnvironment,
+            IStringLocalizer<ArtistController> localizer)
             : base(userManager)
         {
             _service = service;
@@ -41,6 +44,7 @@ namespace MvcProject.WebNewApp.Controllers
             _likeService = likeService;
             _mapper = mapper;
             this.webHostEnvironment = webHostEnvironment;
+            this.localizer = localizer;
         }
 
         [HttpGet]
