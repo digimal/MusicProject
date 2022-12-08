@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.Win32;
 using MvcProject.Bll.Services.Abstract;
 using MvcProject.Bll.Services.Concrete;
+using MvcProject.Bll.App;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("MusicContextConnection") ?? throw new InvalidOperationException("Connection string 'MusicContextConnection' not found.");
@@ -22,15 +23,7 @@ builder.Services.AddDefaultIdentity<User>()
 
 builder.Services.AddScoped<IUserClaimsPrincipalFactory<User>, UserClaimsPrincipalFactory<User, Role>>();
 
-builder.Services.AddScoped<IArtistService, ArtistService>();
-builder.Services.AddScoped<IPictureService, PictureService>();
-builder.Services.AddScoped<IArtistTagService, ArtistTagService>();
-builder.Services.AddScoped<IArtistAssignedTagService, ArtistAssignedTagService>();
-builder.Services.AddScoped<IArtistRelationService, ArtistRelationService>();
-builder.Services.AddScoped<IArtistRelationTypeService, ArtistRelationTypeService>();
-builder.Services.AddScoped<IArtistLikeService, ArtistLikeService>();
-
-builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.InitializeBll();
 
 builder.Services.AddMvc(setupAction => { });
 builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();

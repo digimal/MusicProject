@@ -6,7 +6,7 @@ using MvcProject.Bll.ViewModels.Recording;
 using MvcProject.Bll.ViewModels.User;
 using MvcProject.Domain;
 
-namespace MvcProject.Bll
+namespace MvcProject.Bll.App
 {
     public class MapperProfile : Profile
     {
