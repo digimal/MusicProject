@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcProject.Bll", "MvcProjec
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcProject.WebNewApp", "MvcProject.WebNewApp\MvcProject.WebNewApp.csproj", "{28AE56FD-DB32-44C1-9CD0-3219559326B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcProject.UnitTests", "MvcProject.UnitTests\MvcProject.UnitTests.csproj", "{58E88685-A74F-4ECD-BE61-A97C6FBBD17A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{28AE56FD-DB32-44C1-9CD0-3219559326B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28AE56FD-DB32-44C1-9CD0-3219559326B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28AE56FD-DB32-44C1-9CD0-3219559326B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58E88685-A74F-4ECD-BE61-A97C6FBBD17A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58E88685-A74F-4ECD-BE61-A97C6FBBD17A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58E88685-A74F-4ECD-BE61-A97C6FBBD17A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58E88685-A74F-4ECD-BE61-A97C6FBBD17A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
