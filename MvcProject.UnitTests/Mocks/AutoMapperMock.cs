@@ -1,9 +1,5 @@
 ﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MvcProject.Bll.App;
 
 namespace MvcProject.UnitTests.Mocks
 {
@@ -13,7 +9,7 @@ namespace MvcProject.UnitTests.Mocks
         {
             MapperConfiguration config = new MapperConfiguration(cfg =>
             {
-                cfg.AddProfile(new MvcProject.Bll.MapperProfile());
+                cfg.AddProfile(new MapperProfile());
             });
 
             return config;

@@ -50,6 +50,8 @@ namespace MvcProject.WebNewApp.Controllers
         [HttpGet]
         public IActionResult Index()
         {
+            ViewData["Title"] = localizer["Title"];
+
             return View(_service.GetArtists());
         }
 

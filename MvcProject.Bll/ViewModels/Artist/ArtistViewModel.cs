@@ -11,11 +11,14 @@ namespace MvcProject.Bll.ViewModels.Artist
     public class ArtistViewModel : ArtistBaseViewModel
     {
         [Required(AllowEmptyStrings = false, ErrorMessage = "Aliaces field is obligatory.")]
+        [Display(Name="Aliaces")]
         public string Aliases { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Description field is obligatory.")]
+        [Display(Name = "Description")]
         public string Description { get; set; }
 
+        [Display(Name = "Interval")]
         public Common.TimeIntervalViewModel Interval { get; set; }
     }
 

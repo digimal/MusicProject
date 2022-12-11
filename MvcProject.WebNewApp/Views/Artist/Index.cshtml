@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<MvcProject.Bll.ViewModels.Artist.ArtistBaseViewModel>
 @{
-    ViewBag.Title = "Artists";
+    // ViewData["Title"] ??= "Artists";
 }
 
 <div class="container">
-    <h2 style="float:left">Artists</h2>
+    <h2 style="float:left">@ViewData["Title"]</h2>
     @if (User.IsInRole("Moderator"))
     {
         <button type="button" class="btn btn-primary" style="margin-left:15px; margin-top:15px" data-toggle="modal" data-target="#modalArtist" id="createArtist">Create new</button>

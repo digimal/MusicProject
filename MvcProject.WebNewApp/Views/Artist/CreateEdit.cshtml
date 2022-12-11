@@ -1,4 +1,6 @@
-﻿@model MvcProject.Bll.ViewModels.Artist.ArtistCreateViewModel
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+@model MvcProject.Bll.ViewModels.Artist.ArtistCreateViewModel
 @{
     var action = ViewBag.Edit ? "Edit" : "Create";
     var id = ViewBag.Edit ? "formEdit" : "formCreate";
@@ -7,17 +9,17 @@
 <div id="dialogCreateEdit" class="modal-dialog modal-dialog-centered" role="document">
     <form asp-action="@action" asp-controller="Artist" method="post" enctype="multipart/form-data" id="@id">
         <div class="modal-content">
-            <div class="modal-header">
+            <div ss="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 @if (ViewBag.Edit)
                 {
-                    <h4 class="modal-title" id="modalArtistLabel">Edit artist @Model.Name</h4>
+                    <h4 class="modal-title" id="modalArtistLabel">@Localizer["Edit"] @Model.Name</h4>
                 }
                 else
                 {
-                    <h4 class="modal-title" id="modalArtistLabel">Create new artist</h4>
+                    <h4 class="modal-clatitle" id="modalArtistLabel">@Localizer["Create"]</h4>
                 }
             </div>
             <div class="modal-body">

@@ -83,6 +83,7 @@
 
   <ItemGroup>
     <Folder Include="Pages\" />
+    <Folder Include="Resources\ViewModels\" />
     <Folder Include="Views\Recording\" />
   </ItemGroup>
 

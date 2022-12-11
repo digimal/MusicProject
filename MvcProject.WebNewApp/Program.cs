@@ -2,12 +2,10 @@ using Microsoft.AspNetCore.Identity;
 using MvcProject.Dal;
 using MvcProject.Domain;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.AspNetCore.Diagnostics.HealthChecks;
-using Microsoft.Win32;
-using MvcProject.Bll.Services.Abstract;
-using MvcProject.Bll.Services.Concrete;
 using MvcProject.Bll.App;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("MusicContextConnection") ?? throw new InvalidOperationException("Connection string 'MusicContextConnection' not found.");
@@ -21,17 +19,53 @@ builder.Services.AddDefaultIdentity<User>()
            .AddEntityFrameworkStores<MusicContext>()
                            .AddDefaultTokenProviders();
 
+builder.Services.AddLocalization(options =>
+{
+    options.ResourcesPath = "Resources";
+});
+
 builder.Services.AddScoped<IUserClaimsPrincipalFactory<User>, UserClaimsPrincipalFactory<User, Role>>();
 
 builder.Services.InitializeBll();
 
-builder.Services.AddMvc(setupAction => { });
-builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
-builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+builder.Services.AddMvc()
+    .AddRazorRuntimeCompilation()
+    .AddViewLocalization()
+    .AddDataAnnotationsLocalization(options => {
+        options.DataAnnotationLocalizerProvider = (type, factory) =>
+        {
+            var assemblyName = new AssemblyName(typeof(MvcProject.Bll.Resources.SharedResource).GetTypeInfo().Assembly.FullName);
+
+            return factory.Create("SharedResource", assemblyName.Name);
+        };
+    });
+
+//builder.Services.AddControllersWithViews()
+//    .AddRazorRuntimeCompilation()
+//    .AddDataAnnotationsLocalization()
+//    .AddViewLocalization();
+
+//builder.Services.AddRazorPages()
+//    .AddRazorRuntimeCompilation()
+//    .AddDataAnnotationsLocalization()
+//    .AddViewLocalization();
 
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.ConfigureApplicationCookie(conf => { });
+
+builder.Services.Configure<RequestLocalizationOptions>(options =>
+{
+    var supportedCultures = new[]
+    {
+        new CultureInfo("en"),
+        new CultureInfo("uk")
+    };
+
+    options.DefaultRequestCulture = new RequestCulture("en");
+    options.SupportedCultures = supportedCultures;
+    options.SupportedUICultures = supportedCultures;
+});
 
 var app = builder.Build();
 
@@ -64,6 +98,8 @@ app.UseRouting();
 app.UseCookiePolicy();
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseRequestLocalization();
 
 app.UseEndpoints(endpoints =>
 {
